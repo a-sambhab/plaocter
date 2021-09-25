@@ -1,0 +1,61 @@
+.servicesec{
+    height: 100vh;
+    width: 100%;
+    background-color: #8BB99E;
+}
+.servicesec h1{
+    font-size: 4.5rem;
+    text-align: left;
+    margin-left: 20px;
+    margin-bottom: 50px;
+    text-transform: capitalize;
+    color: #E4E4E4;
+    letter-spacing: 5px;
+}
+.servicesec h1 span{
+    font-size: 5rem;
+    text-transform: uppercase;
+}
+.service{
+    margin: 2% 2%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    justify-content: center;
+    padding: auto;
+    row-gap: 3rem;
+}
+.service .servicecard{
+    width: 400px;
+    height: 200px;
+    border-radius: 20px;
+    background-color: #D0DCDC;
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+}
+.service .servicecard p{
+    font-size: 2.5rem;
+    width: 50%;
+    margin: 5%;
+    text-align: right;
+    text-transform: capitalize;
+    color: #00892C;
+}
+
+@media (max-width: 1250px){
+    .servicesec{
+        height: fit-content;
+    }
+    .service{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 850px){
+    .service{
+        grid-template-columns: 1fr;
+    }
+}

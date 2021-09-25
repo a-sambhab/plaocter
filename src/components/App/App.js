@@ -1,16 +1,22 @@
 import React from 'react';
-// import { DiseaseIdentifier } from '../Planty/planty';
+import PestShop from '../PestShop/PestShop';
+import Services from '../Services/Services';
+import Blog from '../Blog/Blog';
+import {DiseaseIdentifier} from '../Planty/planty'
 import Landing from '../Landing/Landing';
 import Footer from '../Footer/Footer';
 
 const App = () => {
   return(
-    <div>
-        {/* <DiseaseIdentifier/> */}
-        <Landing/>
-        <Footer/>
-    </div>
-  )
+    <>
+      {/* <Landing/> */}
+      <Landing/>
+      <DiseaseIdentifier/>
+      <PestShop/>
+      <Services/>
+      <Blog/>
+      <Footer/>
+    </>)
 }
 
 export default App;
