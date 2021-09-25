@@ -32,7 +32,7 @@ const BlogCard = (props) => {
             <p>{props.desc}</p>
             <a href={props.link}>Read More</a>
         </div>
-        <img src="https://res.cloudinary.com/dgy8ybeoy/image/upload/v1632593894/samples/plaocter/New_Project_12_u3o9c2.png"/>
+        <img alt="blogimg" src="https://res.cloudinary.com/dgy8ybeoy/image/upload/v1632593894/samples/plaocter/New_Project_12_u3o9c2.png"/>
     </div>
     );
 }

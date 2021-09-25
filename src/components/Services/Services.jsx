@@ -31,7 +31,7 @@ const ServiceData = [
 const Servcard = (props) => {
     return(
         <div className="servicecard">
-                    <img src={props.img}/>
+                    <img alt="servimg" src={props.img}/>
                     <p>{props.name}</p>
         </div>
     )

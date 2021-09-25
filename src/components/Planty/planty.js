@@ -62,7 +62,7 @@ export function DiseaseIdentifier() {
 
         let offset = tf.scalar(255);
 
-        let tensorImg = tf.browser.fromPixels(img).resizeNearesrNeighbor([224,224]).toFloat().expandDims();
+        let tensorImg = tf.browser.fromPixels(img).resizeNearestNeighbor([224,224]).toFloat().expandDims();
 
         let tensoringImg_scaled = tensorImg.div(offset);
 
@@ -82,7 +82,7 @@ export function DiseaseIdentifier() {
             <section className="disease-identifier-section">
                 <div className="disease-image-container">
                     <div className="disease-image-box">
-                        <img className="leaf-image" src={PlantImage} alt="Plant disease image" />
+                        <img className="leaf-image" src={PlantImage} alt="Plantdiseaseimage" />
                         {/* containe the uploaded image */}
                     </div>
                     <div className="upload-button-box">

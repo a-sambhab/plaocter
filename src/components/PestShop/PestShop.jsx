@@ -42,9 +42,9 @@ const PestCard = (props) => {
                 <div className="shopcontent">
                     <h2>{props.name}</h2>
                     <p> {props.desc}</p>
-                    <a href="#">Buy Now</a>
+                    <a href="https://google.com">Buy Now</a>
                 </div>
-                <img src={props.img}/>
+                <img alt="shopimg" src={props.img}/>
             </div>
         </>
     );
