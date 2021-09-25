@@ -44,3 +44,18 @@
     text-transform: capitalize;
     color: #00892C;
 }
+
+@media (max-width: 1250px){
+    .servicesec{
+        height: fit-content;
+    }
+    .service{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 850px){
+    .service{
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,61 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.disease-identifier-section{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    background-color: #6C3C4A;
+}
+
+.disease-image-container{
+    display: flex;
+    flex-direction: column;
+    margin-top: 200px;
+    margin-left: 25vw;
+}
+
+.leaf-image{
+    display: block;
+    height: 400px;
+    width: 400px;
+    background-color: transparent;
+}
+
+.upload-button-box{
+    display: block;
+    position: relative;
+    cursor: pointer;
+    height: fit-content;
+    background-color: white;
+    margin-top:100px
+}
+
+
+.upload-button-box input[type=file] {
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    background-color: aqua;
+    display: block;
+    width: 100%;
+    height: 60px;
+}
+
+input[type=file]::file-selector-button{
+    display: none;
+}
+
+.disease-result-container {
+    display: block;
+    margin-left: 300px;
+}
+
+.init-status {
+    margin-top: 200px;
+    font-size: 3em;
+}

@@ -142,10 +142,16 @@
         padding: 30px;
     }
     .shopcard:hover img{
-        top: 70%;
-        left: 50%;
+        top: 50%;
+        left: 0%;
         height: 320px;
 
+    }
+    .pestshop{
+        grid-template-columns: 1fr 1fr;
+    }
+    .pestsection{
+        height: max-content;
     }
 }
 
