@@ -5,23 +5,77 @@ import { useEffect, useState } from "react";
 
 
 export function DiseaseIdentifier() {
-    
-    const [error, setError] = useState(null);
-    const [isLoaded, setIsLoaded] = useState(false);
-    const [items, setItems] = useState([]);
   
+    const [model, setModel] = useState();
+    const [data, setData] = useState();
 
-    const classObject = require('./class_indices.json');
-   // const modelObject = require('./tensorflowjs-model/model.json');
-    console.log(classObject);
-    // for (let i = 0; i < classObject.length; i++){
-    //     console.log(classObject[i]);
-    // }
-    const tensorModelLoaded = async()=> {
-        let status = 'Doctor is working hard to find the disease';
-        model = await tf.loadLayersModel(require('../tensorflowjs-model/model.json'));
-        status = 'Doctor has identified the following disease';
+    async function loadData() {
+        try{
+            let data = await require('./class_indices.json');
+            setData(data);
+            console.log('Data is loaded');
+            console.log(data);
+        }
+        catch(err){
+            console.log(err); 
+            console.log('Data not loaded');
+        }
     }
+
+    useEffect ( () => {
+        tf.ready()
+        .then( ()=> {
+            loadData();
+        });
+    }, []);
+
+    async function InitializeModel() {
+        try {
+            let status = 'Doctor is working hard to find the disease';
+            let model = await tf.loadLayersModel(require('../tensorflowjs-model/model.json'));
+            status = 'Doctor has identified the following disease';
+            setModel(model);
+        }
+        catch(err){
+            console.log(err); 
+            console.log("model not initialized");
+        }
+    }
+
+    useEffect( () => {
+        tf.ready()
+        .then(()=> {
+            InitializeModel();
+        });
+    },[]);
+  
+    async function Predict() {
+        let img = document.querySelector('.leaf-image')
+        if(img) {
+            console.log(
+                'image found'
+            )
+        } else {
+            console.log('image not found')
+        }
+
+        let offset = tf.scaler(255);
+
+        let tensorImg = tf.browser.fromPixels(img).resizeNearesrNeighbor([224,224]).toFloat().expandDims();
+
+        let tensoringImg_scaled = tensorImg.div(offset);
+
+        prediction = await model.predict(tensoringImg_scaled).data();
+
+        loadData().then(data => {
+            predicted_class = tf.argMax(prediction)
+            class_idx = Array.from(predicted_class.dataSync())[0];
+
+            console.log(data[class_idx]);
+            console.log(prediction[class_idx]);
+        })
+    }
+    Predict();
 
         return (
             <section className="disease-identifier-section">
@@ -55,5 +109,3 @@ export function DiseaseIdentifier() {
             </section>
         );
     }
-
-
