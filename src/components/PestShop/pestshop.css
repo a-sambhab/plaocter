@@ -1,0 +1,156 @@
+*{
+    box-sizing: border-box;
+    padding: 0%;
+    margin: 0%;
+}
+.pestsection{
+    width: 100%;
+    height: auto;
+    background-color: #D0DCDC;
+}
+.pestsection h1{
+    font-size: 4.5rem;
+    text-align: right;
+    margin-right: 20px;
+    margin-bottom: 50px;
+    text-transform: capitalize;
+    color: #00892C;
+    letter-spacing: 5px;
+}
+.pestsection h1 span{
+    font-size: 5rem;
+    text-transform: uppercase;
+}
+.pestshop{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+}
+.shopcard{
+    position: relative;
+    width: 400px;
+    height: 300px;
+    border-radius: 20px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    transition: 0.5s;
+    overflow: hidden;
+}
+.shopcard .shopcircle{
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.shopcard .shopcircle::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #703E4A;
+    clip-path: circle(120px at center);
+    transition: all 0.5s;
+}
+
+.shopcard:hover .shopcircle::before{
+    background: #00892C;
+    clip-path: circle(400px at center);
+}
+
+.shopcard .shopcontent {
+    position: relative;
+    width: 70%;
+    left: 20%;
+    padding: 20px 20px 20px 40px;
+    transition: 0.5s;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.shopcard:hover .shopcontent{
+    left: 0;
+    opacity: 1;
+    visibility: visible;
+}
+
+.shopcard .shopcontent h2{
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 2em;
+    line-height: 1em;
+}
+
+.shopcard .shopcontent p{
+    color: #fff;
+}
+
+.shopcard .shopcontent a{
+    position: relative;
+    color: #fff;
+    padding: 10px 20px ;
+    border-radius: 10px;
+    margin-top: 10px ;
+    display: inline-block;
+    text-decoration: none;
+    transition: 0.5s;
+    background-color: #D0DCDC;
+    color: #6C3C4A;
+}
+.shopcard .shopcontent a:hover{
+    transform: scale(1.1);
+    background: #fff;
+    color: #111;
+}
+.shopcard img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 300px;
+    pointer-events: none;
+    transition: all 0.5s;
+}
+
+.shopcard:hover img{
+    left: 55%;
+    top: 0%;
+    transform: scale(1.4);
+}
+
+@media (max-width: 991px){
+    .shopcard{
+        width: auto;
+        max-width: 350px;
+        align-items: flex-start;
+    }
+    .shopcard:hover{
+        height: 600px;
+    }
+    .shopcard .shopcontent{
+        width: 100%;
+        left: 0;
+        padding: 30px;
+    }
+    .shopcard:hover img{
+        top: 70%;
+        left: 50%;
+        height: 320px;
+
+    }
+}
+
+@media (max-width: 420px){
+    .shopcard .shopcontent{
+        padding: 20px;
+    }
+}
