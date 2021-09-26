@@ -1,0 +1,31 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+.landing_image img{
+    width: 100%;
+    height: 100%;
+    /* height: 50px; */
+}
+
+.landing_text h1{
+    position: absolute;
+    top: 260px;
+    left: 30px;
+    font-size: 7rem;
+    text-transform: uppercase;
+    background: linear-gradient(to left, #78404B, #00892C);
+    background-clip: text;
+    color: transparent;
+}
+
+.landing_text h2{
+    position: absolute;
+    top: 400px;
+    left: 30px;
+    font-size: 2rem;
+    color: #78404B;
+}
+
