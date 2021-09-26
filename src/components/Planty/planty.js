@@ -1,9 +1,9 @@
 import React from "react";
 import "./planty.css";
 import PlantImage from '../../assets/plantImage.svg';
-import * as tf from '@tensorflow/tfjs';
+// import * as tf from '@tensorflow/tfjs';
 import DisData from './Diseasename'
-import { useEffect, useState } from "react";
+import {  useState } from "react";
 
 // let data = require('./class_indices.json').then( console.log('data loaded')).catch(console.log("data not loaded")); 
 
