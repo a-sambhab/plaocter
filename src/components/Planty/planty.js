@@ -2,25 +2,33 @@ import React from "react";
 import "./planty.css";
 import PlantImage from '../../assets/plantImage.svg';
 import * as tf from '@tensorflow/tfjs';
-// import { useEffect, useState } from "react";
+import DisData from './Diseasename'
+import { useEffect, useState } from "react";
 
-let data = require('./class_indices.json').then( console.log('data loaded')).catch(console.log("data not loaded")); 
+// let data = require('./class_indices.json').then( console.log('data loaded')).catch(console.log("data not loaded")); 
 
 
 export function DiseaseIdentifier() {
-    async function Predict() { let img = document.querySelector('.leaf-image')
-     if(img) { console.log('image found'); 
-    } else { console.log('image not found') } 
-    let offset = tf.scalar(255); 
-    let tensorImg = tf.browser.fromPixels(img).resizeNearestNeighbor([224,224]).toFloat().expandDims(); 
-    let tensorImg_scaled = tensorImg.div(offset); 
-    let model = await tf.loadLayersModel(require('../tensorflowjs-model/model.json')).then( console.log('model loaded') ); 
-    console.log(data)
-    let prediction = await model.predict(tensorImg_scaled).data(); 
-    var predicted_class = tf.argMax(prediction); 
-    var class_idx = Array.from(predicted_class.dataSync())[0] ;
-    console.log(data[class_idx]); 
-    console.log(prediction[class_idx]); }
+//     async function Predict() { let img = document.querySelector('.leaf-image')
+//     if(img) { console.log('image found'); 
+// } else { console.log('image not found') } 
+// let offset = tf.scalar(255); 
+// let tensorImg = tf.browser.fromPixels(img).resizeNearestNeighbor([224,224]).toFloat().expandDims(); 
+// let tensorImg_scaled = tensorImg.div(offset); 
+// let model = await tf.loadLayersModel(require('../tensorflowjs-model/model.json')).then( console.log('model loaded') ); 
+// console.log(data)
+//     let prediction = await model.predict(tensorImg_scaled).data(); 
+//     var predicted_class = tf.argMax(prediction); 
+//     var class_idx = Array.from(predicted_class.dataSync())[0] ;
+//     console.log(data[class_idx]); 
+//     console.log(prediction[class_idx]); }
+    
+    const [num, setnum] = useState(38);
+    const Varnum = () => {
+        console.log("works");
+        setnum(Math.floor(Math.random() * 36));
+        console.log(num);
+    }
     // // const [model, setModel] = useState();
     // const [data, setData] = useState();
     // let status;
@@ -102,22 +110,23 @@ export function DiseaseIdentifier() {
                         {/* containe the uploaded image */}
                     </div>
                         {/* <button className="upload-button">Choose Image of crop leaf</button> */}
-                        <input type="file" name="uploadImage" id="uploadImage" onChange = { e=> { 
+                        {/* <input type="file" name="uploadImage" id="uploadImage" onChange = { e=> { 
                             // let uploadImage = e.target.value;
                             Predict().then(
                             console.log('inside predict') ) 
                         }}
-                        />
+                        /> */}
+                        <input type="file" name="uploadImage" id="uploadImage" onChange ={Varnum }  />
                     </div>
                 </div>
                 <div className="disease-result-container">
                     <div className="init-status">
                         <p className="disease">
                             <span className="disease-name">
-                                {/* name of the disease is showen here  status: {status} */}
+                                {/* name of the disease is showen here  */} Disease:
                             </span>
                             <span className="disease-name">
-                                {/* name of the disease is showen here  */} Disease:
+                                {DisData[num]}
                             </span>
                         </p>
                     </div>
