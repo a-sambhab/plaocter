@@ -34,7 +34,10 @@
     overflow: hidden;
     background-color: #fff;
     justify-content: baseline;
+    box-shadow: 5px 5px 10px -2px rgba(0, 0, 0, 0.5),
+                -5px -5px 10px -2px rgba(255, 255, 255, 0.2);
 }
+
 .blogcard .blogcontent{
     width: 80%;
     margin: 2%;
@@ -63,6 +66,8 @@
     transform: scale(1.1);
     background-color: #a8bdaf;
     color: #000;
+    box-shadow: 5px 5px 10px -2px rgba(0, 0, 0, 0.5),
+                -5px -5px 10px -2px rgba(255, 255, 255, 0.5);
 }
 @media (max-width: 800px){
     .blogs{

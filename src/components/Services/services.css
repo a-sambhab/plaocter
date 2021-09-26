@@ -35,6 +35,12 @@
     margin: auto;
     justify-content: center;
     align-items: center;
+    transition: all 0.5s;
+}
+.servicecard:hover{
+    transform: scale(1.1);
+    box-shadow: 5px 5px 10px -2px rgba(0, 0, 0, 0.5),
+                -5px -5px 10px -2px rgba(255, 255, 255, 0.2);
 }
 .service .servicecard p{
     font-size: 2.5rem;

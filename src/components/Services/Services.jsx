@@ -39,7 +39,7 @@ const Servcard = (props) => {
 
 export default function Services() {
     return (
-        <div className="servicesec">
+        <div id="service" className="servicesec">
             <h1>
                 why choose <br/> <span>plaocter</span>
             </h1>
