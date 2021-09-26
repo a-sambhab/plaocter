@@ -9,40 +9,42 @@
     height: 100vh;
     display: flex;
     flex-direction: row;
-    background-color: #6C3C4A;
+    background-color: #8BB99E;
 }
 
 .disease-image-container{
     display: flex;
     flex-direction: column;
-    margin-top: 200px;
-    margin-left: 25vw;
+    align-self: center;
+    justify-content: center;
+    margin: auto;
+    /* margin-top: 150px;
+    margin-left: 25vw; */
 }
 
 .leaf-image{
     display: block;
-    height: 400px;
-    width: 400px;
     background-color: transparent;
 }
 
 .upload-button-box{
-    display: block;
     position: relative;
     cursor: pointer;
     height: fit-content;
-    background-color: white;
-    margin-top:100px
+    background-color: #D0DCDC;
 }
 
 
 .upload-button-box input[type=file] {
     cursor: pointer;
     display: flex;
+    justify-content: center;
+    align-items: center;
     flex-direction: row;
-    background-color: aqua;
+    background-color: #a1dbdb;
     display: block;
     width: 100%;
+    font-size: 40px;
     height: 60px;
 }
 
@@ -51,8 +53,11 @@ input[type=file]::file-selector-button{
 }
 
 .disease-result-container {
-    display: block;
-    margin-left: 300px;
+    display: flex;
+    width: 50%;
+    align-items: center;
+    justify-content: center;
+    /* margin-left: 300px; */
 }
 
 .init-status {
